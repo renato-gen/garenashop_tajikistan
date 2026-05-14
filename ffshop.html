@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garena Shop Tajikistan | Официалӣ</title>
+    <style>
+        :root {
+            --garena-red: #e43333;
+            --dark-base: #0f1011;
+            --card-bg: #1a1c1e;
+            --hover-red: #ff4d4d;
+            --text-primary: #ffffff;
+            --text-secondary: #9ea1a4;
+            --accent-glow: rgba(228, 51, 51, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--dark-base);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #000;
+            border-bottom: 3px solid var(--garena-red);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+        }
+
+        .logo span {
+            color: var(--garena-red);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Player ID Section */
+        .id-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .id-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .input-group {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            background: #000;
+            border: 1px solid #444;
+            padding: 12px 20px;
+            color: white;
+            border-radius: 6px;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--garena-red);
+        }
+
+        .btn-verify {
+            background: var(--garena-red);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-verify:hover {
+            background: var(--hover-red);
+        }
+
+        /* Shop Grid */
+        .shop-title {
+            border-left: 4px solid var(--garena-red);
+            padding-left: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .item-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #2a2a2a;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--garena-red);
+            box-shadow: 0 10px 20px var(--accent-glow);
+        }
+
+        .diamond-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .item-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-price {
+            color: var(--garena-red);
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .buy-now {
+            width: 100%;
+            background: transparent;
+            border: 1px solid var(--garena-red);
+            color: var(--text-primary);
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buy-now:hover {
+            background: var(--garena-red);
+        }
+
+        /* Footer Style */
+        footer {
+            background: #000;
+            padding: 4rem 10% 2rem;
+            margin-top: 50px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--garena-red);
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .footer-col p, .footer-col a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .insta-tag {
+            color: #fff !important;
+            font-weight: bold;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #444;
+            font-size: 0.8rem;
+            border-top: 1px solid #111;
+            padding-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .input-group {
+                flex-direction: column;
+            }
+            .btn-verify {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">GARENA<span>SHOP.TJ</span></div>
+</header>
+
+<div class="container">
+    <section class="id-section">
+        <h2>Марҳилаи 1: Ворид кардани Player ID</h2>
+        <div class="input-group">
+            <input type="text" id="player_id" placeholder="ID-и худро ворид кунед...">
+            <button class="btn-verify" onclick="verifyPlayer()">ЛОГИН</button>
+        </div>
+    </section>
+
+    <div class="shop-title">
+        <h2>Марҳилаи 2: Интихоби Алмосҳо</h2>
+    </div>
+
+    <div class="shop-grid" id="shopGrid">
+        <!-- Карточки будут сгенерированы через JS -->
+    </div>
+</div>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h3>Дар бораи мо</h3>
+            <p>Беҳтарин ва арзонтарин мағозаи алмосҳо дар Тоҷикистон.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Тамос бо мо</h3>
+            <p>📞 +992 008774187</p>
+            <p>📞 +992 921013100</p>
+            <a href="https://t.me/Designsoz">✈️ Telegram Channel</a>
+        </div>
+        <div class="footer-col">
+            <h3>Developer</h3>
+            <p>Инстаграм: <span class="insta-tag">@romo.logos</span></p>
+        </div>
+    </div>
+    <div class="copyright">
+        © 2026 Garena Shop Tajikistan. Ҳамаи ҳуқуқҳо ҳифз шудаанд.
+    </div>
+</footer>
+
+<script>
+    const shopData = [
+        { diamonds: "100 + 10", price: "11 TJS" },
+        { diamonds: "210 + 21", price: "23 TJS" },
+        { diamonds: "530 + 53", price: "47 TJS" },
+        { diamonds: "1080 + 108", price: "90 TJS" },
+        { diamonds: "2200 + 220", price: "185 TJS" },
+        { diamonds: "5600 + 560", price: "480 TJS" }
+    ];
+
+    function initShop() {
+        const grid = document.getElementById('shopGrid');
+        shopData.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'item-card';
+            card.innerHTML = `
+                <span class="diamond-icon">💎</span>
+                <div class="item-name">${item.diamonds} Diamonds</div>
+                <div class="item-price">${item.price}</div>
+                <button class="buy-now" onclick="handlePurchase('${item.diamonds}')">Харидан</button>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function verifyPlayer() {
+        const id = document.getElementById('player_id').value;
+        if(id.trim().length < 5) {
+            alert('Лутфан Player ID-и дурустро ворид кунед!');
+            return;
+        }
+        alert('Плеери ID тасдиқ шуд: ' + id);
+    }
+
+    function handlePurchase(amount) {
+        const id = document.getElementById('player_id').value;
+        if(!id) {
+            alert('Аввал Player ID-ро ворид кунед!');
+            return;
+        }
+        const message = `Салом! Ман мехоҳам ${amount} алмос харам. ID: ${id}`;
+        window.open(`https://t.me/your_tg?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    window.onload = initShop;
+</script>
+
+</body>
+</html>
